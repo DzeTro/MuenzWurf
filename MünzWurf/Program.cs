@@ -28,19 +28,31 @@ namespace MünzWurf
                 int zufall = rnd.Next(0, 2);
                 if (zufall == 1)
                 {
-                    zahl++;
-                    Console.Write("X ");
+                    zahl = ZählerX(zahl);
                 }
-                else 
+                else
                 {
-                    kopf++;
-                    Console.Write("O ");
+                    kopf = ZählerO(kopf);
                 }
             }
             Console.WriteLine(" Du hast " + kopf + " Kopf geworfen und " + zahl + " Zahl geworfen.");
 
             Console.ReadKey();
 
+        }
+
+        private static int ZählerO(int kopf)
+        {
+            kopf++;
+            Console.Write("O ");
+            return kopf;
+        }
+
+        private static int ZählerX(int zahl)
+        {
+            zahl++;
+            Console.Write("X ");
+            return zahl;
         }
     }
 }
