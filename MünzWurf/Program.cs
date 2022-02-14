@@ -17,10 +17,10 @@ namespace MünzWurf
             Console.WriteLine("Wieviel Münzen möchtest du werfen??");
             int eingabe = 0;
             eingabe = int.Parse(Console.ReadLine());
-            
+
             int kopf = 0;
             int zahl = 0;
-            
+
             Random rnd = new Random();
 
             for (int i = 0; i < eingabe; i++)
@@ -35,10 +35,14 @@ namespace MünzWurf
                     kopf = ZählerO(kopf);
                 }
             }
-            Console.WriteLine(" Du hast " + kopf + " Kopf geworfen und " + zahl + " Zahl geworfen.");
-
+            AusgabKonsole(kopf, zahl);
             Console.ReadKey();
 
+        }
+
+        private static void AusgabKonsole(int kopf, int zahl)
+        {
+            Console.WriteLine(" Du hast " + kopf + " Kopf geworfen und " + zahl + " Zahl geworfen.");
         }
 
         private static int ZählerO(int kopf)
